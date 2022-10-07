@@ -93,6 +93,16 @@ const PinView = React.forwardRef(
       pinLength,
       buttonSize,
       buttonViewStyle,
+      buttonViewStyle1,
+      buttonViewStyle2,
+      buttonViewStyle3,
+      buttonViewStyle4,
+      buttonViewStyle5,
+      buttonViewStyle6,
+      buttonViewStyle7,
+      buttonViewStyle8,
+      buttonViewStyle9,
+      buttonViewStyle0,
       buttonTextStyle ,
       inputViewEmptyStyle,
       inputViewFilledStyle,
@@ -166,7 +176,7 @@ const PinView = React.forwardRef(
             buttonSize={buttonSize}
             text={buttonTextByKey.one}
             customTextStyle={buttonTextStyle}
-            customViewStyle={buttonViewStyle}
+            customViewStyle={[buttonViewStyle, buttonViewStyle1]}
           />
           <ViewButton
             disabled={disabled}
@@ -176,7 +186,7 @@ const PinView = React.forwardRef(
             buttonSize={buttonSize}
             text={buttonTextByKey.two}
             customTextStyle={buttonTextStyle}
-            customViewStyle={buttonViewStyle}
+            customViewStyle={[buttonViewStyle, buttonViewStyle2]}
           />
           <ViewButton
             disabled={disabled}
@@ -186,7 +196,7 @@ const PinView = React.forwardRef(
             buttonSize={buttonSize}
             text={buttonTextByKey.three}
             customTextStyle={buttonTextStyle}
-            customViewStyle={buttonViewStyle}
+            customViewStyle={[buttonViewStyle, buttonViewStyle3]}
           />
           <ViewButton
             disabled={disabled}
@@ -196,7 +206,7 @@ const PinView = React.forwardRef(
             buttonSize={buttonSize}
             text={buttonTextByKey.four}
             customTextStyle={buttonTextStyle}
-            customViewStyle={buttonViewStyle}
+            customViewStyle={[buttonViewStyle, buttonViewStyle4]}
           />
           <ViewButton
             disabled={disabled}
@@ -206,7 +216,7 @@ const PinView = React.forwardRef(
             buttonSize={buttonSize}
             text={buttonTextByKey.five}
             customTextStyle={buttonTextStyle}
-            customViewStyle={buttonViewStyle}
+            customViewStyle={[buttonViewStyle, buttonViewStyle5]}
           />
           <ViewButton
             disabled={disabled}
@@ -216,7 +226,7 @@ const PinView = React.forwardRef(
             buttonSize={buttonSize}
             text={buttonTextByKey.six}
             customTextStyle={buttonTextStyle}
-            customViewStyle={buttonViewStyle}
+            customViewStyle={[buttonViewStyle, buttonViewStyle6]}
           />
           <ViewButton
             disabled={disabled}
@@ -226,7 +236,7 @@ const PinView = React.forwardRef(
             buttonSize={buttonSize}
             text={buttonTextByKey.seven}
             customTextStyle={buttonTextStyle}
-            customViewStyle={buttonViewStyle}
+            customViewStyle={[buttonViewStyle, buttonViewStyle7]}
           />
           <ViewButton
             disabled={disabled}
@@ -236,7 +246,7 @@ const PinView = React.forwardRef(
             buttonSize={buttonSize}
             text={buttonTextByKey.eight}
             customTextStyle={buttonTextStyle}
-            customViewStyle={buttonViewStyle}
+            customViewStyle={[buttonViewStyle, buttonViewStyle8]}
           />
           <ViewButton
             disabled={disabled}
@@ -246,7 +256,7 @@ const PinView = React.forwardRef(
             buttonSize={buttonSize}
             text={buttonTextByKey.nine}
             customTextStyle={buttonTextStyle}
-            customViewStyle={buttonViewStyle}
+            customViewStyle={[buttonViewStyle, buttonViewStyle9]}
           />
           {customLeftButton !== undefined ? (
             <ViewButton
@@ -269,7 +279,7 @@ const PinView = React.forwardRef(
             buttonSize={buttonSize}
             text={buttonTextByKey.zero}
             customTextStyle={buttonTextStyle}
-            customViewStyle={buttonViewStyle}
+            customViewStyle={[buttonViewStyle, buttonViewStyle0]}
             buttonSize={customLeftButtonSize}
           />
           {customRightButton !== undefined ? (
