@@ -69,7 +69,16 @@ const ViewInput = ({
           text ? inputFilledStyle : inputEmptyStyle,
           customStyle,
         ]}
-      />
+      >
+        {
+          text && (
+            <View style={[
+              { width: size / 2, height: size / 2, borderRadius: size / 4 },
+              inputTextStyle
+            ]} />
+          )
+        }
+      </View>
     )
   }
 }
