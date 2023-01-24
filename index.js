@@ -45,16 +45,19 @@ const ViewInput = ({
   size = 40,
   customStyle,
   text,
+  focus,
   inputFilledStyle = { backgroundColor: "#000" },
   inputEmptyStyle = { backgroundColor: "#FFF" },
+  inputFocusStyle = { backgroundColor: "#FFF" },
 }) => {
+  console.log(focus);
   if (showInputText) {
     return (
       <View
         style={[
           PinViewStyle.inputView,
           { width: size, height: size, borderRadius: size / 2, alignItems: "center", justifyContent: "center" },
-          text ? inputFilledStyle : inputEmptyStyle,
+          text ? inputFilledStyle : focus ? inputFocusStyle : inputEmptyStyle,
           customStyle,
         ]}>
         <Text style={[PinViewStyle.inputText, inputTextStyle]}>{text}</Text>
@@ -66,7 +69,7 @@ const ViewInput = ({
         style={[
           PinViewStyle.inputView,
           { width: size, height: size, borderRadius: size / 2 },
-          text ? inputFilledStyle : inputEmptyStyle,
+          text ? inputFilledStyle : focus ? inputFocusStyle : inputEmptyStyle,
           customStyle,
         ]}
       >
@@ -115,6 +118,7 @@ const PinView = React.forwardRef(
       buttonTextStyle ,
       inputViewEmptyStyle,
       inputViewFilledStyle,
+      inputViewFocusStyle,
       showInputText,
       inputTextStyle,
       inputSize,
@@ -169,7 +173,9 @@ const PinView = React.forwardRef(
               showInputText={showInputText}
               inputEmptyStyle={inputViewEmptyStyle}
               inputFilledStyle={inputViewFilledStyle}
+              inputFocusStyle={inputViewFocusStyle}
               text={input[i]}
+              focus={((!input[i] && input[i-1]) || ((!input[i] && i == 0))) ? true : false}
               customStyle={inputViewStyle}
               size={inputSize}
               key={"input-view-" + i}
@@ -285,7 +291,6 @@ const PinView = React.forwardRef(
             accessible={accessible}
             activeOpacity={activeOpacity}
             onButtonPress={() => onButtonPressHandle("zero", "0")}
-            buttonSize={buttonSize}
             text={buttonTextByKey.zero}
             customTextStyle={buttonTextStyle}
             customViewStyle={[buttonViewStyle, buttonViewStyle0]}
